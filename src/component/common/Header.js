@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { propTypes } from 'prop-types';
+import { PropTypes } from 'prop-types';
 
 const Header =()=>{
     return(
@@ -74,9 +74,9 @@ const Header =()=>{
 //     );
 // };
 
-// Header.propTypes ={
-//     cartData: propTypes.any,
-//     handleApplyClick: propTypes.func.isRequired
-// };
+Header.propTypes ={
+    cartData: PropTypes.any,
+    handleApplyClick: PropTypes.func.isRequired
+};
 
 export default Header;

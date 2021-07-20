@@ -12,7 +12,6 @@ const  App=()=> {
       <BrowserRouter>
         <Switch>
           <Route path={routes.ROOT_ROUTE} component={RootContainer}/>
-          
          </Switch>
      </BrowserRouter>
     </div>

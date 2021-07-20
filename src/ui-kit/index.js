@@ -5,5 +5,5 @@ export {
     Label,
     AutosuggestElement,
     Badge
-  } from "./common-ui-components";
+  } from "./common-ui-component";
   
