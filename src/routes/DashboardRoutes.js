@@ -34,10 +34,11 @@ class DashboardRoutes extends Component {
     }
     
     handleItemList=()=>{
-        const{item,handleAddtoCart} = this.props;
+        const{items,handleAddtoCart} = this.props;
+        console.log(items);
         return(
             <ItemList 
-              items={item}
+              items={items}
               handleAddtoCart={handleAddtoCart}
               isCart={false}
             />
@@ -47,7 +48,7 @@ class DashboardRoutes extends Component {
     handleCartList=()=>{
         const{carts,handleRemoveToCart}=this.props;
         return(
-            <ItemList item={carts} handleRemoveToCart={handleRemoveToCart} isCart />
+            <ItemList items={carts} handleRemoveToCart={handleRemoveToCart} isCart />
         );
     };
 

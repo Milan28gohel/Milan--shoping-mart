@@ -10,6 +10,8 @@ const itemReducer = (state = initialState.itemData, action) => {
         error: null
       };
     case types.GET_ITEMS_SUCCEEDED:
+      console.log(action.payload);
+  
       return {
         ...state,
         items: action.payload,

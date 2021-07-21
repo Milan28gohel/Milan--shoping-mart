@@ -24,9 +24,7 @@ const sortOptions = [
       }
 ];
 
-const handleSelect =()=>{
-
-};
+const handleSelect =()=>{};
 
 const handleRenderItemList = (
     items,
@@ -40,8 +38,8 @@ const handleRenderItemList = (
                 <div className="form-group" id="productListSort">
                     <Label htmlfor="Sort By"  value="Sort By" />
                     <Select 
-                      option={sortOptions}
-                      className="form-Control"
+                      options={sortOptions}
+                      className="form-control"
                        id="productListSortBy"
                        onChange={handleSelect}
                     />
@@ -53,13 +51,15 @@ const handleRenderItemList = (
                         <div className="col-sm-3" key={item.id}>
                             <div className="card">
                                 <div className="card-body">
-                                    <Link to={`${  routes.BASE_ITEM_ROUTE}${item.id}`}>
+                                    <Link to={`${routes.BASE_ITEM_ROUTE}${item.id}`}>
                                         <Item item={item} />
                                         </Link>
                                         <Button 
                                          type="button"
                                          className="btn btn-info"
                                          text={isCart ? "Remove to cart" : "Add to cart"}
+                                         id={item.id}
+                                         onClick={isCart ? handleRemoveToCart : handleAddToCart}
                                         />
                                 </div>
                             </div>
@@ -83,7 +83,7 @@ const ItemList = ({items,handleAddToCart,handleRemoveToCart, isCart})=>{
                   handleRemoveToCart,
                   isCart
               )}
-              {!Item && <p> no data found to display</p>}
+              {!items && <p> no data found to display</p>}
         </div>
     );
 };
@@ -91,8 +91,8 @@ const ItemList = ({items,handleAddToCart,handleRemoveToCart, isCart})=>{
 
 ItemList.propTypes={
     items:PropTypes.any,
-    handleAddToCart:PropTypes.func,
-    handleRemoveToCart:PropTypes.func,
+    handleAddToCart:  PropTypes.func,
+    handleRemoveToCart: PropTypes.func,
     isCart:PropTypes.bool.isRequired
 };
 

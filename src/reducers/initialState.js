@@ -11,7 +11,7 @@ const initialState = {
       isLoading: false,
       error: null
     },
-    produdctData: {
+    productData: {
       products: [],
       isLoading: false,
       error: null
