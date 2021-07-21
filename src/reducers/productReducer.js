@@ -1,7 +1,7 @@
 import * as types from "../lib/constants";
 import initialState from "./initialState";
 
-const productReducer = (state = initialState.produdctData, action) => {
+const productReducer = (state = initialState.productData, action) => {
   switch (action.type) {
     case types.GET_PRODUCT_TYPE_STARTED:
       return {

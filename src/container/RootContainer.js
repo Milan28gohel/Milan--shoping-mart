@@ -9,11 +9,15 @@ import { getItems, addToCart, removeToCart } from "../actions";
 
 
 class RootContainer extends Component{
-    // constructor(props,context){
-    //     super(props,context);
-    // };
+    constructor(props,context){
+        super(props,context);
+        this.state={
+          carts: props.cartData.carts
+        };
+    }
     render(){
         const { items, cartData } = this.props;
+        console.log(items)
         return(
             <div>
             <Header cartData={cartData} handleApplyClick={this.getFilter} />
@@ -30,7 +34,7 @@ class RootContainer extends Component{
               </div>
             </div>
             <Footer />
-          </div>
+          </div>  
         );
     }
 
@@ -53,10 +57,10 @@ class RootContainer extends Component{
           carts.push(cartItem[0]);
         } else {
           carts.splice(indexOf, 1);
-          carts.push(cartItem[0]);
+          carts.push(cartItem[0]);    
         }
         const count = cartData.cartCount + 1;
-        const paylod = { carts, count };
+        const paylod = { carts, count };    
         this.props.addToCart(paylod);
       };
     
@@ -90,7 +94,6 @@ class RootContainer extends Component{
       };
     
       getFilter = filterData => {
-        //list of array data as object & calling API.
         const itemData = products.filter(i => i.type === filterData);
         this.props.getItems(itemData);
       };
@@ -98,7 +101,7 @@ class RootContainer extends Component{
 
 RootContainer.propTypes = {
     getItems: PropTypes.func.isRequired,
-    addToCart: PropTypes.func.isRequired,
+    addToCart: PropTypes.func.isRequired, 
     removeToCart: PropTypes.func.isRequired,
     cartData: PropTypes.any,
     items: PropTypes.any

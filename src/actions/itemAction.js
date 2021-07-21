@@ -25,6 +25,7 @@ export const getItems = payload => {
 
     // Used when get Success Response
     dispatch(getItemsSucceeded(productsData));
+    console.log(productsData)
 
     // Used when get error
     dispatch(getItemsFailed("error.response"));

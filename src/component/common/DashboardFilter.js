@@ -47,11 +47,11 @@ class DashboardFilter extends Component{
 
         if(
             filterData &&
-            filterData.suggestion.length !==0 &&
-            filterData.suggestion[0].name
+            filterData.suggestions.length !==0 &&
+            filterData.suggestions[0].name
         )
         {
-        this.props.handleApplyClick(filterData.suggestion[0].name);
+        this.props.handleApplyClick(filterData.suggestions[0].name);
         }
     };
 }
@@ -59,14 +59,15 @@ class DashboardFilter extends Component{
  DashboardFilter.propTypes={
      handleApplyClick: PropTypes.func.isRequired,
      getProductType: PropTypes.func.isRequired,
-     Products:PropTypes.any
+     products:PropTypes.any
  };
 
- const mapStateToProps=(state)=>({
-     products: state.productdata.products
- });
- 
- const mapDispatchToPrps={
-     getProductType
- };
- export default connect(mapStateToProps,mapDispatchToPrps)(DashboardFilter);
+ const mapStateToProps = state => ({
+    products: state.productData.products
+ })
+  
+const mapDispatchToProps = {
+    getProductType
+};
+
+export default connect(mapStateToProps,mapDispatchToProps )(DashboardFilter); 
