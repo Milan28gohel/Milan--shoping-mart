@@ -7,6 +7,7 @@ import * as routes from "../lib/constants";
 import { ItemList, Product ,LoginForm} from "../component";
 
 import RegistrationForm from "../component/RegistrationForm/RegistrationForm";
+import Contact from "../component/Contact/Contact";
 
 class DashboardRoutes extends Component {
   render() {
@@ -32,13 +33,17 @@ class DashboardRoutes extends Component {
           <Route 
           exact
           path={routes.REGISTRATION_ROUTE}
-          component={this.handelRegistration}
+          component={this.handleRegistration}
           />
           <Route 
           exact
           path={routes.LOGIN_ROUTE}
-          component={this.handelLogin}
-          
+          component={this.handleLogin}
+          />
+          <Route
+          exact
+          path={routes.CONTACT_ROUTE}
+          component={this.handlecontact}
           />
         </Switch>
       </div>
@@ -56,15 +61,21 @@ class DashboardRoutes extends Component {
     );
   };
 
-  handelLogin=()=>{
+  handleLogin=()=>{
     return(
       <LoginForm />
     );
   };
 
-  handelRegistration=()=>{
+  handleRegistration=()=>{
     return(
       <RegistrationForm />
+    )
+  }
+
+  handlecontact=()=>{
+    return(
+      <Contact/>
     )
   }
 
