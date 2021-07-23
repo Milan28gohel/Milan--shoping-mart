@@ -35,6 +35,9 @@ const Header = ({ cartData, handleApplyClick }) => {
           <span className="navbar-brand">
           <Link to={routes.LOGIN_ROUTE}>Login</Link>
           </span>
+          <span className="navbar-brand">
+          <Link to={routes.CONTACT_ROUTE}>ContactUs</Link>
+          </span>
             <li className="nav-item">
               <Link to={routes.CARTS_ROUTE}>
                 {" "}
